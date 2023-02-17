@@ -14,7 +14,7 @@
       $(document).ready(function (event) {
         $("#logout_button").click(function (event) {
           event.preventDefault();
-          let iFrame = document.getElementById("sessionIframe");
+          let iFrame = document.getElementById("writeSessionIframe");
           iFrame.contentWindow.postMessage("logout", "*");
         });
       });
@@ -23,8 +23,16 @@
 
   <iframe
     style="display: none"
+    src="https://adricu1988.github.io/iframe.html"
+    id="readSessionIframe"
+    height="300px"
+    width="100%"
+    title="Iframe Example"
+  ></iframe>
+  <iframe
+    style="display: none"
     src="https://nuria-julibert.github.io/iframe.html"
-    id="sessionIframe"
+    id="writeSessionIframe"
     height="300px"
     width="100%"
     title="Iframe Example"
