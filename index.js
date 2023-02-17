@@ -9995,7 +9995,7 @@ let Cr = new fa({
     genericClientId: "7vGUSpvz2Dl6bkncne5vui6Sjx08TOVV",
     region: Bt.EU,
   }),
-  xr = "http://127.0.0.1:5500/";
+  xr = "https://adricu1988.github.io/";
 window.location.href.includes("start")
   ? Cr.login({
       redirectUri: xr + "index.html",
