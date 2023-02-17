@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"
+    ></script>
+
+    <script language="JavaScript">
+      window.addEventListener("storage", storageEventHandler, false);
+      function storageEventHandler(evt) {
+        top.postMessage("logout-detected", "*");
+      }
+      $(document).ready(function (event) {
+        $("#link1").click(function (event) {
+          event.preventDefault();
+          localStorage.setItem("single_logout", Date.now());
+        });
+      });
+
+      window.addEventListener("message", (e) => {
+        if (e.data == "logout") {
+          let button = document.getElementById("link1");
+          button.click();
+        }
+      });
+    </script>
+  </head>
+
+  <button id="link1">Logout</button>
+</html>

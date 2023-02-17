@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"
+    ></script>
+    <script>
+      window.addEventListener("message", (e) => {
+        if (e.data == "logout-detected") {
+          console.log("Someone logout!");
+        }
+      });
+
+      $(document).ready(function (event) {
+        $("#logout_button").click(function (event) {
+          event.preventDefault();
+          let iFrame = document.getElementById("sessionIframe");
+          iFrame.contentWindow.postMessage("logout", "*");
+        });
+      });
+    </script>
+  </head>
+
+  <iframe
+    style="display: none"
+    src="https://adricu1988.github.io/iframe.html"
+    id="sessionIframe"
+    height="300px"
+    width="100%"
+    title="Iframe Example"
+  ></iframe>
+
+  <button id="logout_button">Logout</button>
+</html>
